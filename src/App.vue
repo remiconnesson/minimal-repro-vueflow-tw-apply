@@ -34,8 +34,10 @@ const elements = ref([
     Dark: {{ isDark }} , click to change
   </button>
   <span class="block classic-apply">this is the target of an @apply rule</span>
-  <div class="w-[1400px] h-[1000px]" >
-    <VueFlow v-model="elements" />
+  <div class="wrapper">
+    <div class="w-[1400px] h-[1000px]" >
+      <VueFlow v-model="elements" />
+    </div>
   </div>
 </template>
 
@@ -44,7 +46,7 @@ const elements = ref([
   @apply text-xl text-orange-700 dark:text-white
 }
 
-:deep(.vue-flow__node){
+.wrapper :deep(.vue-flow__node){
   @apply cursor-pointer bg-green-100 dark:text-red-100 dark:bg-red-700
 }
 </style>
